@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --field: #f8fafc;
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --brand: #0f766e;
+  --brand-dark: #115e59;
+  --brand-soft: #d3f3d3;
+  --accent: #f59e0b;
+  --danger: #dc2626;
+  --success: #15803d;
+  --on-brand: #ffffff;
+  --stripe: #f8fafc;
+  --calc: #ecfdf5;
+}
+.dark {
+  --bg: #0b1220;
+  --panel: #111a2b;
+  --field: #172235;
+  --ink: #e8eef8;
+  --muted: #c8d0db;
+  --line: #263449;
+  --brand: #0f766e;
+  --brand-dark: #0d867c;
+  --brand-soft: #0f2d3d;
+  --accent: #fbbf24;
+  --danger: #f87171;
+  --success: #4ade80;
+  --on-brand: #06201d;
+  --stripe: #152033;
+  --calc: #11352f;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-field: var(--field);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brandDark: var(--brand-dark);
+  --color-brandSoft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-onbrand: var(--on-brand);
+  --color-stripe: var(--stripe);
+  --color-calc: var(--calc);
+}
+
+html { background: var(--bg); }
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 90% -10%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 30rem),
+    var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: color-mix(in srgb, var(--brand) 22%, transparent); }
+button, input, select { font: inherit; }
+* { scrollbar-width: auto; scrollbar-color: #c4d2e6 transparent; }
